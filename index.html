@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Strašidelný dům</title>
+    <meta name="description" content="Strašidelný dům"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="msapplication-TileColor" content="#ffffff"/>
+</head>
+<body>
+<div class="wrapper">
+    <h1 class="text-center">Strašidelný dům</h1>
+    <div class="start" style="display: none">
+        <p class="text">Hra "Strašidelný dům" je super příběhová hra s překvapujícím dějem a možností ovlivnit konec. Tvým úkolem je pomoci vyděšené matce najít ve strašidelném domě
+            jejího ztraceného syna.<br><br> Dokážeš to?</p>
+        <button class="btn-start" type="button" onclick="nextStep('.start', ['.group-1', '.group-1'])" style="display: none">Začít hru</button>
+    </div>
+    <div class="group-1" style="display: none">
+        <p class="text">Děj se odehrává ve strašidelném domě, kde vyděšená matka hledá svého syna. Už prošla skoro celý dům, zbývají jen poslední 2 dveře.<br><br> Do kterých dveří by měla vejít?</p>
+        <div class="doors" style="display: none">
+            <button type="button" onclick="nextStep('.group-1', ['.scenario-1', '.group-2'])" title="Dveře vlevo">Dveře vlevo</button>
+            <button type="button" onclick="nextStep('.group-1', ['.scenario-1', '.group-2'])" title="Dveře vpravo">Dveře vpravo</button>
+        </div>
+    </div>
+
+    <div class="scenario-1" style="display: none">
+        <p class="text">Za dveřmi se skrýval hromotluk s kyjem, který zatloukl maminku do země. Těmito dveřmi se k synovi nedostala.<br><br> Chceš to zkusit znovu?</p>
+        <button class="btn-start" type="button" onclick="resetGame('.scenario-1')" style="display: none">Restartovat hru</button>
+    </div>
+
+    <div class="group-2" style="display: none">
+        <p class="text">Za dveřmi se skrýval vstup do sklepa, kde matka našla další 2 dveře.<br><br> Do kterých dveří by měla vejít?</p>
+        <div class="doors" style="display: none">
+            <button type="button" onclick="nextStep('.group-2', ['.scenario-2', '.scenario-3'])" title="Dveře vlevo">Dveře vlevo</button>
+            <button type="button" onclick="nextStep('.group-2', ['.scenario-2', '.scenario-3'])" title="Dveře vpravo">Dveře vpravo</button>
+        </div>
+    </div>
+
+    <div class="scenario-2" style="display: none">
+        <p class="text">Gratuluji!!!<br><br> Maminka šťastně našla svého ztraceného syna, a to jenom díky tvé pomoci. Úspěšně jsi dokončil(a) celou hru.<br><br> Chceš si zahrát znova?</p>
+        <button class="btn-start" type="button" onclick="resetGame('.scenario-2')" style="display: none">Restartovat hru</button>
+    </div>
+
+    <div class="scenario-3" style="display: none">
+        <p class="text">Zpoza dveří vylétl duch, který maminku napadl a zabil. Ze záhrobí už se k synovi nedostane.<br><br> Chceš to zkusit znovu?</p>
+        <button class="btn-start" type="button" onclick="resetGame('.scenario-3')" style="display: none">Restartovat hru</button>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="main.js"></script>
+</html>
